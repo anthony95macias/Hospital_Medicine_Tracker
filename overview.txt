@@ -1,0 +1,33 @@
+hospital_medicine_tracker/
+│
+├── hospital_medicine_tracker-BACKEND/  # Backend directory
+│   ├── Dockerfile                      # Dockerfile for the backend service
+│   ├── database.db                    # SQLite database file
+│   ├── schema.sql                     # SQL schema file
+│   ├── init_db.js                     # Script to initialize the database
+│   ├── server.js                      # Express server setup
+│   ├── routes/                        # API routes
+│   │   ├── patients.js                # Routes related to patient operations
+│   │   ├── medicines.js               # Routes related to medicine operations
+│   │   └── medications.js             # Routes related to patient medications
+│   └── models/                        # Database interaction logic
+│       ├── patient.js                 # Model for patient operations
+│       ├── medicine.js                # Model for medicine operations
+│       └── medication.js              # Model for patient medication tracking
+│
+├── hospital_medicine_tracker-CLIENT/   # Frontend directory
+│   ├── Dockerfile                      # Dockerfile for building and serving the frontend
+│   ├── public/                        # Static assets (e.g., images, favicon)
+│   ├── src/                           # Source code for the frontend
+│   │   ├── components/               # React components
+│   │   ├── views/                    # Different views/pages
+│   │   ├── App.tsx                    # Main React component
+│   │   └── main.tsx                   # Entry point for React application
+│   ├── tsconfig.json                  # TypeScript configuration
+│   ├── swc.config.json                # SWC configuration
+│   ├── vite.config.ts                 # Vite configuration
+│   └── package.json                   # Project dependencies and scripts
+│
+├── docker-compose.yml                 # Docker Compose configuration
+├── .env                               # Environment variables for the project
+└── README.md                          # Project documentation

@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: ./hospital_medicine_tracker-CLIENT
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+
+  backend:
+    build:
+      context: ./hospital_medicine_tracker-BACKEND
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    env_file:
+      - .env
+
+  db:
+    image: nouchka/sqlite3:latest
+    volumes:
+      - db-data:/data
+
+volumes:
+  db-data:
+
